@@ -1,0 +1,32 @@
+{
+    "name": "sofa/http-client",
+    "description": "Factory wrapper around Guzzle HTTP Client to simplify things for lazy dev",
+    "type": "library",
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.5",
+        "psr/log": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jarek Tkaczyk",
+            "email": "jarek@softonsofa.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sofa\\HttpClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sofa\\HttpClient\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
