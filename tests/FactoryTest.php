@@ -3,6 +3,7 @@
 
 namespace Sofa\HttpClient\Tests;
 
+use LogicException;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -68,5 +69,12 @@ class FactoryTest extends TestCase
 
         $this->assertEquals('https://some.url', $client->getConfig('base_uri'));
         $this->assertEquals(['user', 'secret'], $client->getConfig('auth'));
+    }
+
+    public function testCannotLogWithoutLoggerInstance()
+    {
+        $factory = new Factory(false);
+        $this->expectException(LogicException::class);
+        $factory->enableLogging();
     }
 }

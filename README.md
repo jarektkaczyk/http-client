@@ -1,8 +1,11 @@
 # http-client
 Wrapper around Guzzle HTTP Client to simplify bootstrapping
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sofa/http-client.svg?style=flat-square)](https://packagist.org/packages/jarektkaczyk/http-client)
+[![GitHub Tests Action Status](https://github.com/jarektkaczyk/http-client/workflows/Tests/badge.svg)](https://github.com/jarektkaczyk/http-client/actions?query=workflow%3Atests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/sofa/http-client.svg?style=flat-square)](https://packagist.org/packages/jarektkaczyk/http-client)
 
-Simplest example in a Laravel app - ready to copy-paste and run
+The simplest example in a Laravel app - ready to copy-paste and run
 ```php
 use Sofa\HttpClient\Factory;
 
