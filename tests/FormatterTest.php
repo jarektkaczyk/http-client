@@ -38,6 +38,11 @@ class FormatterTest extends TestCase
                 null,
                 'GET HTTP/1.1 {"request": {"key":"value"}, "response": }',
             ],
+            'json custom type' => [
+                new Request('get', 'uri', ['Content-Type' => 'application/custom+json'], json_encode(['key' => 'value'])),
+                null,
+                'GET HTTP/1.1 {"request": {"key":"value"}, "response": }',
+            ],
             'json response' => [
                 new Request('get', 'uri'),
                 new Response(200, ['Content-Type' => 'application/json; charset=utf-8'], json_encode(['one' => 'two'])),

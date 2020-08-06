@@ -19,7 +19,7 @@ class Formatter extends MessageFormatter
     const DEFAULT_FORMAT = '{method} {uri} HTTP/{version} {code} ({res_header_Content-Length} {res_header_Content-Type}) {"request": {\req_body}, "response": {\res_body}}';
     const ALLOWED_CONTENT_TYPES = [
         'application/json',
-        'application/ld+json',
+        'application/.+\+json',
         'application/xml',
         'multipart/form-data',
         'text/plain',
@@ -44,7 +44,7 @@ class Formatter extends MessageFormatter
         $contentType = $message->getHeader('Content-Type')[0] ?? '';
 
         foreach (self::ALLOWED_CONTENT_TYPES as $allowed) {
-            if (strpos($contentType, $allowed) !== false) {
+            if (preg_match('#'.$allowed.'#', $contentType)) {
                 return function () use ($message) {
                     $body = (string)$message->getBody();
                     $message->getBody()->rewind();
