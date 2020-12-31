@@ -2,7 +2,7 @@
 
 namespace Sofa\HttpClient;
 
-use Exception;
+use Throwable;
 use GuzzleHttp\MessageFormatter;
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;
@@ -27,7 +27,7 @@ class Formatter extends MessageFormatter
         'text/html',
     ];
 
-    public function format(RequestInterface $request, ResponseInterface $response = null, Exception $error = null)
+    public function format(RequestInterface $request, ?ResponseInterface $response = null, ?Throwable $error = null): string
     {
         return preg_replace_callback_array([
             preg_quote('/{\req_body}/') => $this->formatter($request),
