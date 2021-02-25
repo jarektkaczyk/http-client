@@ -18,6 +18,7 @@ class Formatter extends MessageFormatter
 {
     const DEFAULT_FORMAT = '{method} {uri} HTTP/{version} {code} ({res_header_Content-Length} {res_header_Content-Type}) {"request": {\req_body}, "response": {\res_body}}';
     const ALLOWED_CONTENT_TYPES = [
+        'application/x-www-form-urlencoded',
         'application/json',
         'application/.+\+json',
         'application/xml',
