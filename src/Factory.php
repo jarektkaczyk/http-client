@@ -26,7 +26,7 @@ class Factory
     private HandlerStack $handler;
     public array $history = [];
 
-    public function __construct(bool $fakeRequests, LoggerInterface $logger = null)
+    public function __construct(bool $fakeRequests, ?LoggerInterface $logger = null)
     {
         $this->fakeRequests = $fakeRequests;
         $this->logger = $logger;
